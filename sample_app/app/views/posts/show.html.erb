@@ -1,4 +1,6 @@
 <h2>タイトル</h2>
 <p><%= @post.title %></p>
 <h2>本文</h2>
-<p><%= @post.body %></p>
+<p><%= @post.body %>
+<!--編集結果は詳細ページで見せるためここへ  -->
+<%= link_to '編集', edit_post_path(@post.id) %></p>
