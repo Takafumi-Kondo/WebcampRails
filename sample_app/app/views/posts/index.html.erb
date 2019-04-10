@@ -1,0 +1,10 @@
+<!-- ビューファイルにPostsControllerの @postsから取得した投稿データ全てを表示する処理を-->
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %><!--@posts.each でPostのレコード数だけループする-->
+<p>タイトル</p>
+<!-- リンクlink_toメソッドを。投稿一覧から詳細ページへ -->
+    <span>
+    	<%=link_to post.title, post_path(post.id) %>
+		<!-- リンクに表示させる文　　↑リンク先URL"/posts/#{post.id}"を上に省略可 -->
+    </span>
+<% end %>

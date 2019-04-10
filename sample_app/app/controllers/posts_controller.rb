@@ -11,8 +11,20 @@ class PostsController < ApplicationController
   	#DBへ保存
   	post.save
   	#保存後トップ画面へリダイレクト
-  	redirect_to '/top'
-  end
+  	redirect_to post_path(post.id)#どの投稿かを指定.id
+  end#↑↑投稿後すぐ内容を観れるよう'/top'を変更(詳細画面へリダイレクト)
+
+
+  def index
+    @posts = Post.all
+  end#全てのデータ取って@postsへ。全てなので複数
+
+  #URL中のidをコントローラーで受け取るroutes.rbから
+  def show
+    @post = Post.find(params[:id])
+  end#params[:id]で:idにある値を取得。URL/posts/1ならparamsには「{id: 1}」ハッシュがある
+
+
 
   #create作成　フォームからのデータ受け取り、そのデータをモデルを介しDBに保存
   private #メソッド前に、認識されなくなる。下に
