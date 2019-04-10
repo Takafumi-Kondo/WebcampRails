@@ -4,6 +4,9 @@
 <p><%= @post.body %></p>
 <!-- 投稿された画像を一覧画面と詳細画面に表示させる -->
 <h2>画像</h2>
-<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg' %>ß
+<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg' %>
 <!--編集結果は詳細ページで見せるためここへ  -->
-<%= link_to '編集', edit_post_path(@post.id) %>
+<%= link_to "編集", edit_post_path(@post.id) %>
+<!-- 削除ボタン、誤発防止のために確認画面も表示させる -->
+<%= link_to "削除", destroy_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+

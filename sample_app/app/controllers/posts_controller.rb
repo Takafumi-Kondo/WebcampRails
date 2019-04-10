@@ -35,6 +35,13 @@ class PostsController < ApplicationController
       redirect_to post_path(post.id)
     end
 
+  #showの削除リンク押すとそこのpostのid含めたURLが送信。それをもとにレコード探しDBから削除する
+    def destroy
+      post = Post.find(params[:id])#レコード(データ)を１取得
+      post.destroy#レコードをDBから削除
+      redirect_to posts_path#post一覧へリダイレクト
+    end
+
     #create作成　フォームからのデータ受け取り、そのデータをモデルを介しDBに保存
     private #メソッド前に、認識されなくなる。下に
 

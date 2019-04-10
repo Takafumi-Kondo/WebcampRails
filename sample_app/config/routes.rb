@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => 'posts#edit', as: 'edit_post'
   #posts/〜〜/edit というURL全て該当↑↑
   patch 'posts/:id' => 'posts#update', as: 'update_post'#新規はpost,更新はpatch
+  #destroyアクションにつながるようにルーティング追加
+  delete 'posts/:id' => 'posts#destroy', as: 'destroy_post'
 end
