@@ -7,4 +7,8 @@
     	<%=link_to post.title, post_path(post.id) %>
 		<!-- リンクに表示させる文　　↑リンク先URL"/posts/#{post.id}"を上に省略可 -->
     </span>
+    <!-- 投稿された画像を一覧画面と詳細画面に表示させる -->
+    <p>画像</p>
+    <%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg' %>
+										<!--fillで高さ幅 formatで拡張子 -->
 <% end %>

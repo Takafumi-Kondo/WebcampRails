@@ -1,6 +1,9 @@
 <h2>タイトル</h2>
 <p><%= @post.title %></p>
 <h2>本文</h2>
-<p><%= @post.body %>
+<p><%= @post.body %></p>
+<!-- 投稿された画像を一覧画面と詳細画面に表示させる -->
+<h2>画像</h2>
+<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg' %>ß
 <!--編集結果は詳細ページで見せるためここへ  -->
-<%= link_to '編集', edit_post_path(@post.id) %></p>
+<%= link_to '編集', edit_post_path(@post.id) %>

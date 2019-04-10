@@ -39,6 +39,6 @@ class PostsController < ApplicationController
     private #メソッド前に、認識されなくなる。下に
 
     def post_params #投稿ボタンがトリガー、postsコントのcreateアクフォームに入った値が送信される
-    	params.require(:post).permit(:title, :body)
-    end# 			　モデル名			　カラムな
+    	params.require(:post).permit(:title, :body, :image)
+    end# 			　モデル名			　カラムな     gemのImagemagick使う時追加(:image)
   end
